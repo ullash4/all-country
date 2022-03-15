@@ -9,7 +9,19 @@ const showCountry = country =>{
     // console.log(countryHTML);
     document.getElementById('countries').innerHTML=countryHTML.join(' ');
 }
-const countrystr = country =>{
+// Option 3
+const countrystr = ({area,name, flags, region}) =>{
+    return `
+    <div class="countries">
+        <h1>${name.common}</h1>
+        <p>Area: ${area}</p>
+        <p>Region: ${region}</p>
+        <img width='200' src="${flags.png}">
+    </div>
+    `
+}
+// Option 2
+/* const countrystr = country =>{
     const {area,name, flags} = country;
     return `
     <div class="countries">
@@ -18,7 +30,9 @@ const countrystr = country =>{
         <img width='200' src="${flags.png}">
     </div>
     `
-}
+} */
+
+// Option :1
 /* const countrystr = country =>{
     return `
     <div class="countries">
